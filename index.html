@@ -135,9 +135,9 @@
                 <img src="dfieldx-print.jpg" alt="dfieldX Interface" class="screenshot">
                 <p data-i18n="dfDesc">Visualização de campos de direções e análise de EDOs de 1ª ordem. Alta definição vetorial e integração adaptativa.</p>
                 <div class="buttons">
-                    <!-- Botão de Executável: Download direto do arquivo dfieldX.jar da última release -->
+                    <!-- Botão de Executável -->
                     <a href="https://github.com/lars29-ufpr/dfieldX/releases/latest/download/dfieldX.jar" class="btn btn-use"><span data-i18n="btnDown">Baixar</span> <span class="os-name">Desktop</span> (.jar)</a>
-                    <!-- Botão de Código: Inicia o download imediato do ZIP -->
+                    <!-- Botão de Código Corrigido -->
                     <a href="https://github.com/lars29-ufpr/dfieldX/archive/refs/heads/main.zip" class="btn btn-dev" data-i18n="btnCode">Código-fonte (.zip)</a>
                 </div>
             </div>
@@ -151,9 +151,9 @@
                 <img src="pplanex-print.jpg" alt="pplaneX Interface" class="screenshot">
                 <p data-i18n="ppDesc">Plano de fase completo para sistemas planares. Essencial para o estudo qualitativo em biomatemática e sistemas dinâmicos.</p>
                 <div class="buttons">
-                    <!-- Botão de Executável: Download direto do arquivo pplaneX.jar da última release -->
+                    <!-- Botão de Executável -->
                     <a href="https://github.com/lars29-ufpr/pplaneX/releases/latest/download/pplaneX.jar" class="btn btn-use"><span data-i18n="btnDown">Baixar</span> <span class="os-name">Desktop</span> (.jar)</a>
-                    <!-- Botão de Código: Inicia o download imediato do ZIP -->
+                    <!-- Botão de Código Corrigido -->
                     <a href="https://github.com/lars29-ufpr/pplaneX/archive/refs/heads/main.zip" class="btn btn-dev" data-i18n="btnCode">Código-fonte (.zip)</a>
                 </div>
             </div>
@@ -224,7 +224,7 @@
                     let btn = el.parentElement;
                     btn.innerHTML = "<span data-i18n='btnMobile'>Disponível para Desktop</span>";
                     btn.style.opacity = "0.6"; btn.style.pointerEvents = "none";
-                    btn.removeAttribute("href"); // Desativa o clique no celular
+                    btn.removeAttribute("href"); 
                 } else {
                     el.innerText = os;
                 }
