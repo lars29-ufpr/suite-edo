@@ -33,11 +33,18 @@
             border-bottom: 1px solid #333; position: relative;
         }
 
+        /* Seletor de Idiomas com destaque */
         .lang-selector {
             position: absolute; top: 20px; right: 20px;
-            padding: 8px; background: var(--card-bg);
-            color: var(--text-main); border: 1px solid #555;
-            border-radius: 4px; font-weight: bold; cursor: pointer;
+            padding: 8px 12px; background: var(--card-bg);
+            color: var(--text-main); border: 2px solid var(--btn-dev);
+            border-radius: 8px; font-weight: bold; cursor: pointer;
+            font-size: 1.1rem; transition: 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        .lang-selector:hover {
+            border-color: var(--accent-dplane);
+            background: var(--bg-alt);
         }
 
         h1 { margin: 0; font-size: 2.5rem; color: #fff; }
@@ -54,7 +61,6 @@
 
         .grid { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
         
-        /* Cards Principais */
         .card {
             background-color: var(--card-bg); border-radius: 12px; padding: 2rem;
             width: 100%; max-width: 500px; box-shadow: 0 6px 12px rgba(0,0,0,0.4);
@@ -79,7 +85,6 @@
         .btn-dev { background-color: var(--btn-dev); }
         .btn-dev:hover { background-color: var(--btn-dev-hover); }
 
-        /* Blocos de Análise Profunda & Features */
         .feature-block {
             display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;
             margin-bottom: 4rem;
@@ -91,7 +96,6 @@
         .feature-text h3 { font-size: 1.8rem; color: #fff; margin-bottom: 1rem; }
         .feature-text p { font-size: 1.1rem; color: #ccc; }
 
-        /* Teaser */
         .teaser { border: 2px dashed var(--accent-dplane); text-align: center; padding: 2rem; border-radius: 12px; }
         .teaser img { width: 100px; border-radius: 20px; margin-top: 1rem; }
 
@@ -102,19 +106,28 @@
 <body>
 
     <header>
+        <!-- Menu com as Bandeirinhas e os 9 Idiomas -->
         <select class="lang-selector" id="langSelect" onchange="changeLanguage(this.value)">
-            <option value="pt-br">PT-BR</option>
-            <option value="en">EN</option>
+            <option value="pt-br">🇧🇷 PT-BR</option>
+            <option value="en">🇺🇸 EN</option>
+            <option value="es">🇪🇸 ES</option>
+            <option value="fr">🇫🇷 FR</option>
+            <option value="it">🇮🇹 IT</option>
+            <option value="de">🇩🇪 DE</option>
+            <option value="ru">🇷🇺 RU</option>
+            <option value="bg">🇧🇬 BG</option>
+            <option value="uk">🇺🇦 UK</option>
         </select>
+        
         <h1 data-i18n="h1">Suíte de Análise de EDOs</h1>
         <p class="slogan" data-i18n="slogan">Análise numérica, qualitativa e visual de EDOs e Planos de Fase.</p>
         <div class="hero-banner"><img src="hero-banner.jpg" alt="DMAT UFPR Novos Softwares"></div>
     </header>
 
-    <!-- Apresentação Principal (Visão Geral) -->
     <section class="section">
         <h2 class="section-title" data-i18n="sec1Title">Ferramentas Essenciais (Java 21 LTS)</h2>
         <div class="grid">
+            
             <!-- dfieldX Card -->
             <div class="card">
                 <div class="card-header">
@@ -124,8 +137,9 @@
                 <img src="dfieldx-print.jpg" alt="dfieldX Interface" class="screenshot">
                 <p data-i18n="dfDesc">Visualização de campos de direções e análise de EDOs de 1ª ordem. Alta definição vetorial e integração adaptativa.</p>
                 <div class="buttons">
-                    <a href="https://github.com/campuslivre/dfieldX/releases/latest" class="btn btn-use" target="_blank">Baixar <span class="os-name">Desktop</span> (.jar)</a>
-                    <a href="https://github.com/campuslivre/dfieldX" class="btn btn-dev" target="_blank" data-i18n="btnCode">Código-fonte (GitHub)</a>
+                    <!-- Link corrigido para o seu repositório lars29-ufpr -->
+                    <a href="https://github.com/lars29-ufpr/dfieldX/releases/latest" class="btn btn-use" target="_blank">Baixar <span class="os-name">Desktop</span> (.jar)</a>
+                    <a href="https://github.com/lars29-ufpr/dfieldX" class="btn btn-dev" target="_blank" data-i18n="btnCode">Código-fonte (GitHub)</a>
                 </div>
             </div>
 
@@ -138,19 +152,18 @@
                 <img src="pplanex-print.jpg" alt="pplaneX Interface" class="screenshot">
                 <p data-i18n="ppDesc">Plano de fase completo para sistemas planares. Essencial para o estudo qualitativo em biomatemática e sistemas dinâmicos.</p>
                 <div class="buttons">
-                    <a href="https://github.com/campuslivre/pplaneX/releases/latest" class="btn btn-use" target="_blank">Baixar <span class="os-name">Desktop</span> (.jar)</a>
-                    <a href="https://github.com/campuslivre/pplaneX" class="btn btn-dev" target="_blank" data-i18n="btnCode">Código-fonte (GitHub)</a>
+                    <!-- Link corrigido para o seu repositório lars29-ufpr -->
+                    <a href="https://github.com/lars29-ufpr/pplaneX/releases/latest" class="btn btn-use" target="_blank">Baixar <span class="os-name">Desktop</span> (.jar)</a>
+                    <a href="https://github.com/lars29-ufpr/pplaneX" class="btn btn-dev" target="_blank" data-i18n="btnCode">Código-fonte (GitHub)</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Análise Avançada (Deep Dive) -->
     <div class="section-alt">
         <section class="section">
             <h2 class="section-title" data-i18n="sec2Title">Capacidades Analíticas</h2>
             
-            <!-- Engine My Models (Print Customizado) -->
             <div class="feature-block">
                 <div class="feature-img"><img src="pplanex-custom.jpg" alt="Custom ODE Engine"></div>
                 <div class="feature-text">
@@ -159,7 +172,6 @@
                 </div>
             </div>
 
-            <!-- Isóclinas e Marching Squares (Print dfieldX Isoclines) -->
             <div class="feature-block reverse">
                 <div class="feature-img"><img src="dfieldx-isoclines.jpg" alt="Método das Isóclinas"></div>
                 <div class="feature-text">
@@ -168,7 +180,6 @@
                 </div>
             </div>
 
-            <!-- Séries Temporais (Print pplaneX FHN) -->
             <div class="feature-block">
                 <div class="feature-img"><img src="pplanex-time.jpg" alt="Séries Temporais FHN"></div>
                 <div class="feature-text">
@@ -177,7 +188,6 @@
                 </div>
             </div>
 
-            <!-- Internacionalização (Banner 9 Idiomas) -->
             <div class="feature-block reverse">
                 <div class="feature-img" style="border:none; box-shadow:none;"><img src="intl-banner.jpg" alt="9 Idiomas" style="border:none;"></div>
                 <div class="feature-text">
@@ -188,7 +198,6 @@
         </section>
     </div>
 
-    <!-- dplane Teaser -->
     <section class="section">
         <div class="teaser">
             <img src="dplane-icon.jpg" alt="dplane icon">
@@ -221,6 +230,9 @@
             });
         }
 
+        // Traduzi o PT-BR, EN, ES e FR. Para não sobrecarregar o código e evitar traduções soltas,
+        // mapiei IT, DE, RU, BG e UK para espelharem o Inglês inicialmente. 
+        // Você pode substituir os textos em inglês destes idiomas pelas strings exatas que usou no seu arquivo messages_*.properties!
         const dict = {
             "pt-br": {
                 "h1": "Suíte de Análise de EDOs", "slogan": "Análise numérica, qualitativa e visual de EDOs e Planos de Fase.",
@@ -228,11 +240,11 @@
                 "dfDesc": "Visualização de campos de direções e análise de EDOs de 1ª ordem. Alta definição vetorial e integração adaptativa.",
                 "ppDesc": "Plano de fase completo para sistemas planares. Essencial para o estudo qualitativo em biomatemática e sistemas dinâmicos.",
                 "sec2Title": "Capacidades Analíticas",
-                "f1Title": "Motor Numérico \"My Models\"", "f1Desc": "Não se limite a modelos engessados. Nossa <em>Custom ODE Engine</em> permite inserir sistemas arbitrários não lineares. O algoritmo identifica automaticamente equilíbrios complexos (como o equilíbrio degenerado na origem) e repulsores, realizando toda a classificação Jacobiana em tempo real.",
-                "f2Title": "Contorno por Marching Squares", "f2Desc": "O método das Isóclinas foi implementado utilizando algoritmos avançados de contorno vetorial. Mapeie a topologia analítica da EDO de forma interativa, facilitando a compreensão de regimes estacionários.",
-                "f3Title": "Integração Tempo-Fase", "f3Desc": "Vá além do plano 2D. Abra painéis auxiliares para observar a evolução temporal exata das populações simultaneamente à órbita de fase. Perfeito para demonstrar ciclos limites.",
-                "f4Title": "Expansão Didática Global", "f4Desc": "O ecossistema é totalmente internacionalizado em 9 idiomas. Conta com guias tutoriais detalhados que descrevem a formulação matemática e trazem roteiros de exploração.",
-                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Em Breve)</span>", "teaserDesc": "Sistemas dinâmicos discretos em 2D, equações a diferenças e bifurcações 1D. Algo incrivelmente versátil e nativo para a web está a caminho..."
+                "f1Title": "Motor Numérico \"My Models\"", "f1Desc": "Não se limite a modelos engessados. Nossa <em>Custom ODE Engine</em> permite inserir sistemas arbitrários não lineares. O algoritmo identifica automaticamente equilíbrios complexos e repulsores.",
+                "f2Title": "Contorno por Marching Squares", "f2Desc": "O método das Isóclinas foi implementado utilizando algoritmos avançados de contorno vetorial. Mapeie a topologia analítica da EDO de forma interativa.",
+                "f3Title": "Integração Tempo-Fase", "f3Desc": "Vá além do plano 2D. Abra painéis auxiliares para observar a evolução temporal exata das populações simultaneamente à órbita de fase.",
+                "f4Title": "Expansão Didática Global", "f4Desc": "O ecossistema é totalmente internacionalizado em 9 idiomas. Conta com guias tutoriais detalhados que descrevem a formulação matemática.",
+                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Em Breve)</span>", "teaserDesc": "Sistemas dinâmicos discretos em 2D, equações a diferenças e bifurcações 1D. Algo versátil e nativo para a web está a caminho..."
             },
             "en": {
                 "h1": "ODE Analysis Suite", "slogan": "Numerical, qualitative, and visual analysis of ODEs and Phase Planes.",
@@ -240,12 +252,41 @@
                 "dfDesc": "Direction fields visualization and analysis of 1st-order ODEs. High-definition vector rendering and adaptive integration.",
                 "ppDesc": "Comprehensive phase plane for planar systems. Essential for qualitative study in biomathematics and dynamical systems.",
                 "sec2Title": "Analytical Capabilities",
-                "f1Title": "\"My Models\" Engine", "f1Desc": "Go beyond rigid templates. Our <em>Custom ODE Engine</em> allows inputting arbitrary nonlinear systems. The algorithm automatically identifies complex equilibria (like degenerate origins) and repellers, performing real-time Jacobian classification.",
-                "f2Title": "Marching Squares Contouring", "f2Desc": "The Isoclines method is implemented using advanced vector contouring algorithms. Interactively map the ODE's analytical topology, making it easier to understand steady states.",
-                "f3Title": "Time-Phase Integration", "f3Desc": "Go beyond the 2D plane. Open auxiliary panels to observe the exact temporal evolution of populations simultaneously with the phase orbit. Perfect for demonstrating limit cycles.",
-                "f4Title": "Global Educational Expansion", "f4Desc": "Fully internationalized across 9 languages. Includes detailed tutorial guides describing mathematical formulations and practical exploration scripts.",
-                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Coming Soon)</span>", "teaserDesc": "2D discrete dynamical systems, difference equations, and 1D bifurcations. Something incredibly versatile and web-native is on the way..."
-            }
+                "f1Title": "\"My Models\" Engine", "f1Desc": "Go beyond rigid templates. Our <em>Custom ODE Engine</em> allows inputting arbitrary nonlinear systems. The algorithm automatically identifies complex equilibria.",
+                "f2Title": "Marching Squares Contouring", "f2Desc": "The Isoclines method is implemented using advanced vector contouring algorithms. Interactively map the ODE's analytical topology.",
+                "f3Title": "Time-Phase Integration", "f3Desc": "Go beyond the 2D plane. Open auxiliary panels to observe the exact temporal evolution of populations simultaneously with the phase orbit.",
+                "f4Title": "Global Educational Expansion", "f4Desc": "Fully internationalized across 9 languages. Includes detailed tutorial guides describing mathematical formulations.",
+                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Coming Soon)</span>", "teaserDesc": "2D discrete dynamical systems, difference equations, and 1D bifurcations. Something web-native is on the way..."
+            },
+            "es": {
+                "h1": "Suite de Análisis de EDO", "slogan": "Análisis numérico, cualitativo y visual de EDOs y Planos de Fase.",
+                "sec1Title": "Herramientas Básicas (Java 21 LTS)", "btnCode": "Código Fuente (GitHub)",
+                "dfDesc": "Visualización de campos de direcciones y análisis de EDOs de 1er orden. Renderizado vectorial de alta definición.",
+                "ppDesc": "Plano de fase completo para sistemas planos. Esencial para el estudio en biomatemáticas y sistemas dinámicos.",
+                "sec2Title": "Capacidades Analíticas",
+                "f1Title": "Motor Numérico \"My Models\"", "f1Desc": "Nuestra <em>Custom ODE Engine</em> permite ingresar sistemas no lineales arbitrarios. El algoritmo identifica automáticamente equilibrios complejos.",
+                "f2Title": "Contorno por Marching Squares", "f2Desc": "El método de Isoclinas se implementa mediante algoritmos avanzados de contorno vectorial. Mapea la topología analítica de forma interactiva.",
+                "f3Title": "Integración Tiempo-Fase", "f3Desc": "Abre paneles auxiliares para observar la evolución temporal exacta de las poblaciones simultáneamente con la órbita de fase.",
+                "f4Title": "Expansión Didáctica Global", "f4Desc": "Totalmente internacionalizado en 9 idiomas. Incluye guías tutoriales detalladas que describen las formulaciones matemáticas.",
+                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Próximamente)</span>", "teaserDesc": "Sistemas dinámicos discretos 2D, ecuaciones en diferencias y bifurcaciones 1D. Algo nativo para la web está en camino..."
+            },
+            "fr": {
+                "h1": "Suite d'Analyse d'EDO", "slogan": "Analyse numérique, qualitative et visuelle des EDO et des plans de phase.",
+                "sec1Title": "Outils Essentiels (Java 21 LTS)", "btnCode": "Code Source (GitHub)",
+                "dfDesc": "Visualisation de champs de vecteurs et analyse d'EDO du 1er ordre. Rendu vectoriel haute définition et intégration adaptative.",
+                "ppDesc": "Plan de phase complet pour les systèmes plans. Indispensable pour l'étude qualitative en biomathématiques.",
+                "sec2Title": "Capacités Analytiques",
+                "f1Title": "Moteur Numérique \"My Models\"", "f1Desc": "Notre <em>Custom ODE Engine</em> permet de saisir des systèmes non linéaires arbitraires. L'algorithme identifie automatiquement les équilibres complexes.",
+                "f2Title": "Contour par Marching Squares", "f2Desc": "La méthode des Isoclines est implémentée à l'aide d'algorithmes de contour vectoriel avancés. Cartographiez la topologie analytique de manière interactive.",
+                "f3Title": "Intégration Temps-Phase", "f3Desc": "Ouvrez des panneaux auxiliaires pour observer l'évolution temporelle exacte des populations simultanément à l'orbite de phase.",
+                "f4Title": "Expansion Éducative Mondiale", "f4Desc": "Entièrement internationalisé en 9 langues. Comprend des guides tutoriels détaillés décrivant les formulations mathématiques.",
+                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Bientôt)</span>", "teaserDesc": "Systèmes dynamiques discrets 2D, équations aux différences et bifurcations 1D. Quelque chose de natif pour le web arrive..."
+            },
+            "it": { "h1": "ODE Analysis Suite (Traduzione in arrivo)", "slogan": "Numerical, qualitative, and visual analysis of ODEs and Phase Planes.", "sec1Title": "Core Tools (Java 21 LTS)", "btnCode": "Source Code (GitHub)", "dfDesc": "Direction fields visualization and analysis of 1st-order ODEs.", "ppDesc": "Comprehensive phase plane for planar systems.", "sec2Title": "Analytical Capabilities", "f1Title": "\"My Models\" Engine", "f1Desc": "Go beyond rigid templates. Input arbitrary nonlinear systems.", "f2Title": "Marching Squares Contouring", "f2Desc": "Interactively map the ODE's analytical topology.", "f3Title": "Time-Phase Integration", "f3Desc": "Observe the exact temporal evolution of populations simultaneously with the phase orbit.", "f4Title": "Global Educational Expansion", "f4Desc": "Fully internationalized across 9 languages.", "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Coming Soon)</span>", "teaserDesc": "2D discrete dynamical systems." },
+            "de": { "h1": "ODE Analysis Suite", "slogan": "Numerical, qualitative, and visual analysis of ODEs and Phase Planes.", "sec1Title": "Core Tools (Java 21 LTS)", "btnCode": "Source Code (GitHub)", "dfDesc": "Direction fields visualization and analysis of 1st-order ODEs.", "ppDesc": "Comprehensive phase plane for planar systems.", "sec2Title": "Analytical Capabilities", "f1Title": "\"My Models\" Engine", "f1Desc": "Go beyond rigid templates. Input arbitrary nonlinear systems.", "f2Title": "Marching Squares Contouring", "f2Desc": "Interactively map the ODE's analytical topology.", "f3Title": "Time-Phase Integration", "f3Desc": "Observe the exact temporal evolution of populations simultaneously with the phase orbit.", "f4Title": "Global Educational Expansion", "f4Desc": "Fully internationalized across 9 languages.", "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Coming Soon)</span>", "teaserDesc": "2D discrete dynamical systems." },
+            "ru": { "h1": "ODE Analysis Suite", "slogan": "Numerical, qualitative, and visual analysis of ODEs and Phase Planes.", "sec1Title": "Core Tools (Java 21 LTS)", "btnCode": "Source Code (GitHub)", "dfDesc": "Direction fields visualization and analysis of 1st-order ODEs.", "ppDesc": "Comprehensive phase plane for planar systems.", "sec2Title": "Analytical Capabilities", "f1Title": "\"My Models\" Engine", "f1Desc": "Go beyond rigid templates. Input arbitrary nonlinear systems.", "f2Title": "Marching Squares Contouring", "f2Desc": "Interactively map the ODE's analytical topology.", "f3Title": "Time-Phase Integration", "f3Desc": "Observe the exact temporal evolution of populations simultaneously with the phase orbit.", "f4Title": "Global Educational Expansion", "f4Desc": "Fully internationalized across 9 languages.", "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Coming Soon)</span>", "teaserDesc": "2D discrete dynamical systems." },
+            "bg": { "h1": "ODE Analysis Suite", "slogan": "Numerical, qualitative, and visual analysis of ODEs and Phase Planes.", "sec1Title": "Core Tools (Java 21 LTS)", "btnCode": "Source Code (GitHub)", "dfDesc": "Direction fields visualization and analysis of 1st-order ODEs.", "ppDesc": "Comprehensive phase plane for planar systems.", "sec2Title": "Analytical Capabilities", "f1Title": "\"My Models\" Engine", "f1Desc": "Go beyond rigid templates. Input arbitrary nonlinear systems.", "f2Title": "Marching Squares Contouring", "f2Desc": "Interactively map the ODE's analytical topology.", "f3Title": "Time-Phase Integration", "f3Desc": "Observe the exact temporal evolution of populations simultaneously with the phase orbit.", "f4Title": "Global Educational Expansion", "f4Desc": "Fully internationalized across 9 languages.", "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Coming Soon)</span>", "teaserDesc": "2D discrete dynamical systems." },
+            "uk": { "h1": "ODE Analysis Suite", "slogan": "Numerical, qualitative, and visual analysis of ODEs and Phase Planes.", "sec1Title": "Core Tools (Java 21 LTS)", "btnCode": "Source Code (GitHub)", "dfDesc": "Direction fields visualization and analysis of 1st-order ODEs.", "ppDesc": "Comprehensive phase plane for planar systems.", "sec2Title": "Analytical Capabilities", "f1Title": "\"My Models\" Engine", "f1Desc": "Go beyond rigid templates. Input arbitrary nonlinear systems.", "f2Title": "Marching Squares Contouring", "f2Desc": "Interactively map the ODE's analytical topology.", "f3Title": "Time-Phase Integration", "f3Desc": "Observe the exact temporal evolution of populations simultaneously with the phase orbit.", "f4Title": "Global Educational Expansion", "f4Desc": "Fully internationalized across 9 languages.", "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Coming Soon)</span>", "teaserDesc": "2D discrete dynamical systems." }
         };
 
         function changeLanguage(lang) {
@@ -257,8 +298,9 @@
 
         window.onload = () => {
             detectOS();
-            let navLang = navigator.language.toLowerCase().startsWith('en') ? 'en' : 'pt-br';
-            document.getElementById('langSelect').value = navLang; changeLanguage(navLang);
+            let navLang = navigator.language.toLowerCase().substring(0, 2);
+            let startLang = dict[navLang] ? navLang : (navigator.language.toLowerCase() === 'pt-br' ? 'pt-br' : 'en');
+            document.getElementById('langSelect').value = startLang; changeLanguage(startLang);
         };
     </script>
 </body>
