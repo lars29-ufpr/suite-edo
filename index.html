@@ -33,8 +33,9 @@
             border-bottom: 1px solid #333; position: relative;
         }
 
+        /* Seletor blindado */
         .lang-selector {
-            position: absolute; top: 20px; right: 20px;
+            position: absolute; top: 20px; right: 20px; z-index: 1000;
             padding: 8px 12px; background: var(--card-bg);
             color: var(--text-main); border: 2px solid var(--btn-dev);
             border-radius: 8px; font-weight: bold; cursor: pointer;
@@ -44,6 +45,16 @@
         .lang-selector:hover {
             border-color: var(--accent-dplane);
             background: var(--bg-alt);
+        }
+
+        /* Centraliza o seletor elegantemente em telas menores */
+        @media (max-width: 768px) {
+            .lang-selector {
+                position: relative;
+                top: 0; right: 0;
+                margin-bottom: 25px;
+                display: inline-block;
+            }
         }
 
         h1 { margin: 0; font-size: 2.5rem; color: #fff; }
@@ -105,6 +116,7 @@
 <body>
 
     <header>
+        <!-- As bandeiras coloridas voltaram ao HTML! -->
         <select class="lang-selector" id="langSelect" onchange="changeLanguage(this.value)">
             <option value="pt-br">🇧🇷 PT-BR</option>
             <option value="en">🇺🇸 EN</option>
@@ -209,11 +221,9 @@
         function detectOS() {
             let ua = window.navigator.userAgent, os = "Desktop";
             
-            // Detecção mais robusta de Mobile/Tablet
             const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS|EdgiOS/i.test(ua);
             const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
 
-            // Verifica se é mobile pelo User Agent OU se tem tela sensível ao toque E é pequeno (para evitar pegar notebooks touch)
             if (isMobile || (isTouch && window.innerWidth <= 1024)) {
                 os = "Mobile";
             } else if (ua.indexOf("Win") !== -1) {
@@ -224,6 +234,16 @@
                 os = "Linux";
             }
             
+            // TRUQUE DE MESTRE: Substitui as bandeiras pelo globo APENAS se o visitante usar Windows
+            if (os === "Windows") {
+                const flagsToGlobe = {'🇧🇷':'🌐', '🇺🇸':'🌐', '🇪🇸':'🌐', '🇫🇷':'🌐', '🇮🇹':'🌐', '🇩🇪':'🌐', '🇷🇺':'🌐', '🇧🇬':'🌐', '🇺🇦':'🌐'};
+                document.querySelectorAll('#langSelect option').forEach(opt => {
+                    for (let flag in flagsToGlobe) {
+                        opt.innerText = opt.innerText.replace(flag, flagsToGlobe[flag]);
+                    }
+                });
+            }
+
             document.querySelectorAll('.os-name').forEach(el => {
                 if (os === "Mobile") {
                     let btn = el.closest('a');
@@ -238,6 +258,7 @@
                 }
             });
         }
+
         const dict = {
             "pt-br": {
                 "h1": "Suíte de Análise de EDOs", "slogan": "Análise numérica, qualitativa e visual de EDOs e Planos de Fase.",
