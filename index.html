@@ -208,14 +208,24 @@
     <script>
         function detectOS() {
             let ua = window.navigator.userAgent, os = "Desktop";
-            if (ua.indexOf("Win") !== -1) os = "Windows";
-            else if (ua.indexOf("Mac") !== -1) os = "macOS";
-            else if (ua.indexOf("Linux") !== -1) os = "Linux";
-            else if (/Android|webOS|iPhone|iPad/i.test(ua)) os = "Mobile";
+            
+            // Detecção mais robusta de Mobile/Tablet
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS|EdgiOS/i.test(ua);
+            const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
+
+            // Verifica se é mobile pelo User Agent OU se tem tela sensível ao toque E é pequeno (para evitar pegar notebooks touch)
+            if (isMobile || (isTouch && window.innerWidth <= 1024)) {
+                os = "Mobile";
+            } else if (ua.indexOf("Win") !== -1) {
+                os = "Windows";
+            } else if (ua.indexOf("Mac") !== -1) {
+                os = "macOS";
+            } else if (ua.indexOf("Linux") !== -1) {
+                os = "Linux";
+            }
             
             document.querySelectorAll('.os-name').forEach(el => {
                 if (os === "Mobile") {
-                    // Agora localiza o botão subindo até a tag <a>
                     let btn = el.closest('a');
                     if (btn) {
                         btn.innerHTML = "<span data-i18n='btnMobile'>Disponível para Desktop</span>";
@@ -228,7 +238,6 @@
                 }
             });
         }
-
         const dict = {
             "pt-br": {
                 "h1": "Suíte de Análise de EDOs", "slogan": "Análise numérica, qualitativa e visual de EDOs e Planos de Fase.",
