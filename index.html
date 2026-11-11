@@ -126,7 +126,6 @@
         <h2 class="section-title" data-i18n="sec1Title">Ferramentas Essenciais (Java 21 LTS)</h2>
         <div class="grid">
             
-            <!-- dfieldX Card -->
             <div class="card">
                 <div class="card-header">
                     <img src="dfieldx-icon.jpg" alt="dfieldX Icon">
@@ -135,14 +134,11 @@
                 <img src="dfieldx-print.jpg" alt="dfieldX Interface" class="screenshot">
                 <p data-i18n="dfDesc">Visualização de campos de direções e análise de EDOs de 1ª ordem. Alta definição vetorial e integração adaptativa.</p>
                 <div class="buttons">
-                    <!-- Botão de Executável (já funcionava) -->
                     <a href="https://github.com/lars29-ufpr/dfieldX/releases/latest/download/dfieldX.jar" class="btn btn-use"><span data-i18n="btnDown">Baixar</span> <span class="os-name">Desktop</span> (.jar)</a>
-                    <!-- Botão de Código (branch alterada para master) -->
                     <a href="https://github.com/lars29-ufpr/dfieldX/archive/refs/heads/master.zip" class="btn btn-dev" data-i18n="btnCode">Código-fonte (.zip)</a>
                 </div>
             </div>
 
-            <!-- pplaneX Card -->
             <div class="card">
                 <div class="card-header">
                     <img src="pplanex-icon.jpg" alt="pplaneX Icon">
@@ -151,9 +147,7 @@
                 <img src="pplanex-print.jpg" alt="pplaneX Interface" class="screenshot">
                 <p data-i18n="ppDesc">Plano de fase completo para sistemas planares. Essencial para o estudo qualitativo em biomatemática e sistemas dinâmicos.</p>
                 <div class="buttons">
-                    <!-- Botão de Executável (repositório alterado para pplane-java) -->
                     <a href="https://github.com/lars29-ufpr/pplane-java/releases/latest/download/pplaneX.jar" class="btn btn-use"><span data-i18n="btnDown">Baixar</span> <span class="os-name">Desktop</span> (.jar)</a>
-                    <!-- Botão de Código (repositório pplane-java e branch master) -->
                     <a href="https://github.com/lars29-ufpr/pplane-java/archive/refs/heads/master.zip" class="btn btn-dev" data-i18n="btnCode">Código-fonte (.zip)</a>
                 </div>
             </div>
@@ -221,10 +215,14 @@
             
             document.querySelectorAll('.os-name').forEach(el => {
                 if (os === "Mobile") {
-                    let btn = el.parentElement;
-                    btn.innerHTML = "<span data-i18n='btnMobile'>Disponível para Desktop</span>";
-                    btn.style.opacity = "0.6"; btn.style.pointerEvents = "none";
-                    btn.removeAttribute("href"); 
+                    // Agora localiza o botão subindo até a tag <a>
+                    let btn = el.closest('a');
+                    if (btn) {
+                        btn.innerHTML = "<span data-i18n='btnMobile'>Disponível para Desktop</span>";
+                        btn.style.opacity = "0.6"; 
+                        btn.style.pointerEvents = "none";
+                        btn.removeAttribute("href"); 
+                    }
                 } else {
                     el.innerText = os;
                 }
