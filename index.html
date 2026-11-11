@@ -125,6 +125,7 @@
     <section class="section">
         <h2 class="section-title" data-i18n="sec1Title">Ferramentas Essenciais (Java 21 LTS)</h2>
         <div class="grid">
+            
             <!-- dfieldX Card -->
             <div class="card">
                 <div class="card-header">
@@ -134,8 +135,10 @@
                 <img src="dfieldx-print.jpg" alt="dfieldX Interface" class="screenshot">
                 <p data-i18n="dfDesc">Visualização de campos de direções e análise de EDOs de 1ª ordem. Alta definição vetorial e integração adaptativa.</p>
                 <div class="buttons">
-                    <a href="https://github.com/lars29-ufpr/dfieldX/releases/latest" class="btn btn-use" target="_blank"><span data-i18n="btnDown">Baixar</span> <span class="os-name">Desktop</span> (.jar)</a>
-                    <a href="https://github.com/lars29-ufpr/dfieldX" class="btn btn-dev" target="_blank" data-i18n="btnCode">Código-fonte (GitHub)</a>
+                    <!-- Botão de Executável: Download direto do arquivo dfieldX.jar da última release -->
+                    <a href="https://github.com/lars29-ufpr/dfieldX/releases/latest/download/dfieldX.jar" class="btn btn-use"><span data-i18n="btnDown">Baixar</span> <span class="os-name">Desktop</span> (.jar)</a>
+                    <!-- Botão de Código: Inicia o download imediato do ZIP -->
+                    <a href="https://github.com/lars29-ufpr/dfieldX/archive/refs/heads/main.zip" class="btn btn-dev" data-i18n="btnCode">Código-fonte (.zip)</a>
                 </div>
             </div>
 
@@ -148,8 +151,10 @@
                 <img src="pplanex-print.jpg" alt="pplaneX Interface" class="screenshot">
                 <p data-i18n="ppDesc">Plano de fase completo para sistemas planares. Essencial para o estudo qualitativo em biomatemática e sistemas dinâmicos.</p>
                 <div class="buttons">
-                    <a href="https://github.com/lars29-ufpr/pplaneX/releases/latest" class="btn btn-use" target="_blank"><span data-i18n="btnDown">Baixar</span> <span class="os-name">Desktop</span> (.jar)</a>
-                    <a href="https://github.com/lars29-ufpr/pplaneX" class="btn btn-dev" target="_blank" data-i18n="btnCode">Código-fonte (GitHub)</a>
+                    <!-- Botão de Executável: Download direto do arquivo pplaneX.jar da última release -->
+                    <a href="https://github.com/lars29-ufpr/pplaneX/releases/latest/download/pplaneX.jar" class="btn btn-use"><span data-i18n="btnDown">Baixar</span> <span class="os-name">Desktop</span> (.jar)</a>
+                    <!-- Botão de Código: Inicia o download imediato do ZIP -->
+                    <a href="https://github.com/lars29-ufpr/pplaneX/archive/refs/heads/main.zip" class="btn btn-dev" data-i18n="btnCode">Código-fonte (.zip)</a>
                 </div>
             </div>
         </div>
@@ -219,6 +224,7 @@
                     let btn = el.parentElement;
                     btn.innerHTML = "<span data-i18n='btnMobile'>Disponível para Desktop</span>";
                     btn.style.opacity = "0.6"; btn.style.pointerEvents = "none";
+                    btn.removeAttribute("href"); // Desativa o clique no celular
                 } else {
                     el.innerText = os;
                 }
@@ -228,7 +234,7 @@
         const dict = {
             "pt-br": {
                 "h1": "Suíte de Análise de EDOs", "slogan": "Análise numérica, qualitativa e visual de EDOs e Planos de Fase.",
-                "sec1Title": "Ferramentas Essenciais (Java 21 LTS)", "btnCode": "Código-fonte (GitHub)", "btnDown": "Baixar", "btnMobile": "Disponível para Desktop",
+                "sec1Title": "Ferramentas Essenciais (Java 21 LTS)", "btnCode": "Código-fonte (.zip)", "btnDown": "Baixar", "btnMobile": "Disponível para Desktop",
                 "dfDesc": "Visualização de campos de direções e análise de EDOs de 1ª ordem. Alta definição vetorial e integração adaptativa.",
                 "ppDesc": "Plano de fase completo para sistemas planares. Essencial para o estudo qualitativo em biomatemática e sistemas dinâmicos.",
                 "sec2Title": "Capacidades Analíticas",
@@ -240,7 +246,7 @@
             },
             "en": {
                 "h1": "ODE Analysis Suite", "slogan": "Numerical, qualitative, and visual analysis of ODEs and Phase Planes.",
-                "sec1Title": "Core Tools (Java 21 LTS)", "btnCode": "Source Code (GitHub)", "btnDown": "Download", "btnMobile": "Available for Desktop",
+                "sec1Title": "Core Tools (Java 21 LTS)", "btnCode": "Source Code (.zip)", "btnDown": "Download", "btnMobile": "Available for Desktop",
                 "dfDesc": "Direction fields visualization and analysis of 1st-order ODEs. High-definition vector rendering and adaptive integration.",
                 "ppDesc": "Comprehensive phase plane for planar systems. Essential for qualitative study in biomathematics and dynamical systems.",
                 "sec2Title": "Analytical Capabilities",
@@ -252,7 +258,7 @@
             },
             "es": {
                 "h1": "Suite de Análisis de EDO", "slogan": "Análisis numérico, cualitativo y visual de EDOs y Planos de Fase.",
-                "sec1Title": "Herramientas Básicas (Java 21 LTS)", "btnCode": "Código Fuente (GitHub)", "btnDown": "Descargar", "btnMobile": "Disponible para Desktop",
+                "sec1Title": "Herramientas Básicas (Java 21 LTS)", "btnCode": "Código Fuente (.zip)", "btnDown": "Descargar", "btnMobile": "Disponible para Desktop",
                 "dfDesc": "Visualización de campos de direcciones y análisis de EDOs de 1er orden. Renderizado vectorial de alta definición.",
                 "ppDesc": "Plano de fase completo para sistemas planos. Esencial para el estudio en biomatemáticas y sistemas dinámicos.",
                 "sec2Title": "Capacidades Analíticas",
@@ -264,7 +270,7 @@
             },
             "fr": {
                 "h1": "Suite d'Analyse d'EDO", "slogan": "Analyse numérique, qualitative et visuelle des EDO et des plans de phase.",
-                "sec1Title": "Outils Essentiels (Java 21 LTS)", "btnCode": "Code Source (GitHub)", "btnDown": "Télécharger", "btnMobile": "Disponible pour Desktop",
+                "sec1Title": "Outils Essentiels (Java 21 LTS)", "btnCode": "Code Source (.zip)", "btnDown": "Télécharger", "btnMobile": "Disponible pour Desktop",
                 "dfDesc": "Visualisation de champs de vecteurs et analyse d'EDO du 1er ordre. Rendu vectoriel haute définition et intégration adaptative.",
                 "ppDesc": "Plan de phase complet pour les systèmes plans. Indispensable pour l'étude qualitative en biomathématiques.",
                 "sec2Title": "Capacités Analytiques",
@@ -276,63 +282,63 @@
             },
             "it": {
                 "h1": "Suite di Analisi di EDO", "slogan": "Analisi numerica, qualitativa e visiva di EDO e Piani di Fase.",
-                "sec1Title": "Strumenti Essenziali (Java 21 LTS)", "btnCode": "Codice Sorgente (GitHub)", "btnDown": "Scarica", "btnMobile": "Disponibile per Desktop",
+                "sec1Title": "Strumenti Essenziali (Java 21 LTS)", "btnCode": "Codice Sorgente (.zip)", "btnDown": "Scarica", "btnMobile": "Disponibile per Desktop",
                 "dfDesc": "Visualizzazione di campi di direzioni e analisi di EDO del 1° ordine. Alta definizione vettoriale e integrazione adattiva.",
                 "ppDesc": "Piano di fase completo per sistemi planari. Essenziale per lo studio qualitativo in biomatematica e sistemi dinamici.",
                 "sec2Title": "Capacità Analitiche",
-                "f1Title": "Motore Numerico \"My Models\"", "f1Desc": "Non limitarti a modelli rigidi. La nostra <em>Custom ODE Engine</em> permette di inserire sistemi non lineari arbitrari. L'algoritmo identifica automaticamente equilibri complessi.",
-                "f2Title": "Contorno tramite Marching Squares", "f2Desc": "Il metodo delle Isocline è implementato utilizzando algoritmi avanzati di contorno vettoriale. Mappa la topologia analitica dell'EDO in modo interattivo.",
-                "f3Title": "Integrazione Tempo-Fase", "f3Desc": "Vai oltre il piano 2D. Apri pannelli ausiliari per osservare l'esatta evoluzione temporale delle popolazioni simultaneamente all'orbita di fase.",
-                "f4Title": "Espansione Didattica Globale", "f4Desc": "L'ecosistema è completamente internazionalizzato in 9 lingue. Include guide tutoriali dettagliate che descrivono la formulazione matematica.",
-                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(In Arrivo)</span>", "teaserDesc": "Sistemi dinamici discreti in 2D, equazioni alle differenze e biforcazioni 1D. Qualcosa di nativo per il web è in arrivo..."
+                "f1Title": "Motore Numerico \"My Models\"", "f1Desc": "Non limitarti a modelli rigidi. La nostra <em>Custom ODE Engine</em> permette di inserire sistemi non lineari arbitrari.",
+                "f2Title": "Contorno tramite Marching Squares", "f2Desc": "Il metodo delle Isocline è implementato utilizzando algoritmi avanzati di contorno vettoriale.",
+                "f3Title": "Integrazione Tempo-Fase", "f3Desc": "Vai oltre il piano 2D. Apri pannelli ausiliari per osservare l'esatta evoluzione temporale delle popolazioni.",
+                "f4Title": "Espansione Didattica Globale", "f4Desc": "L'ecosistema è completamente internazionalizzato in 9 lingue.",
+                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(In Arrivo)</span>", "teaserDesc": "Sistemi dinamici discreti in 2D, equazioni alle differenze e biforcazioni 1D."
             },
             "de": {
                 "h1": "DGL-Analyse-Suite", "slogan": "Numerische, qualitative und visuelle Analyse von DGLs und Phasenporträts.",
-                "sec1Title": "Kernwerkzeuge (Java 21 LTS)", "btnCode": "Quellcode (GitHub)", "btnDown": "Herunterladen", "btnMobile": "Verfügbar für Desktop",
+                "sec1Title": "Kernwerkzeuge (Java 21 LTS)", "btnCode": "Quellcode (.zip)", "btnDown": "Herunterladen", "btnMobile": "Verfügbar für Desktop",
                 "dfDesc": "Visualisierung von Richtungsfeldern und Analyse von DGLs 1. Ordnung. Hochauflösendes Vektor-Rendering und adaptive Integration.",
-                "ppDesc": "Umfassendes Phasenporträt für planare Systeme. Unverzichtbar für das qualitative Studium in Biomathematik und dynamischen Systemen.",
+                "ppDesc": "Umfassendes Phasenporträt für planare Systeme. Unverzichtbar für das qualitative Studium in Biomathematik.",
                 "sec2Title": "Analytische Fähigkeiten",
-                "f1Title": "\"My Models\" Engine", "f1Desc": "Gehen Sie über starre Vorlagen hinaus. Unsere <em>Custom ODE Engine</em> ermöglicht die Eingabe beliebiger nichtlinearer Systeme. Der Algorithmus identifiziert automatisch komplexe Gleichgewichte.",
-                "f2Title": "Marching Squares Konturierung", "f2Desc": "Die Isoklinen-Methode wird mit fortschrittlichen Vektorkontur-Algorithmen implementiert. Kartieren Sie die analytische Topologie der DGL interaktiv.",
-                "f3Title": "Zeit-Phasen-Integration", "f3Desc": "Gehen Sie über die 2D-Ebene hinaus. Öffnen Sie Hilfspanels, um die genaue zeitliche Entwicklung von Populationen gleichzeitig mit der Phasenbahn zu beobachten.",
-                "f4Title": "Globale didaktische Erweiterung", "f4Desc": "Das Ökosystem ist in 9 Sprachen vollständig internationalisiert. Enthält detaillierte Tutorial-Anleitungen zur mathematischen Formulierung.",
-                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Demnächst)</span>", "teaserDesc": "Zeitdiskrete dynamische 2D-Systeme, Differenzengleichungen und 1D-Bifurkationen. Etwas Web-natives ist auf dem Weg..."
+                "f1Title": "\"My Models\" Engine", "f1Desc": "Gehen Sie über starre Vorlagen hinaus. Unsere <em>Custom ODE Engine</em> ermöglicht die Eingabe beliebiger nichtlinearer Systeme.",
+                "f2Title": "Marching Squares Konturierung", "f2Desc": "Die Isoklinen-Methode wird mit fortschrittlichen Vektorkontur-Algorithmen implementiert.",
+                "f3Title": "Zeit-Phasen-Integration", "f3Desc": "Gehen Sie über die 2D-Ebene hinaus. Öffnen Sie Hilfspanels, um die genaue zeitliche Entwicklung von Populationen zu beobachten.",
+                "f4Title": "Globale didaktische Erweiterung", "f4Desc": "Das Ökosystem ist in 9 Sprachen vollständig internationalisiert.",
+                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Demnächst)</span>", "teaserDesc": "Zeitdiskrete dynamische 2D-Systeme, Differenzengleichungen und 1D-Bifurkationen."
             },
             "ru": {
                 "h1": "Пакет Анализа ОДУ", "slogan": "Численный, качественный и визуальный анализ ОДУ и фазовых плоскостей.",
-                "sec1Title": "Основные Инструменты (Java 21 LTS)", "btnCode": "Исходный код (GitHub)", "btnDown": "Скачать", "btnMobile": "Доступно для Desktop",
-                "dfDesc": "Визуализация полей направлений и анализ ОДУ 1-го порядка. Векторный рендеринг высокого разрешения и адаптивное интегрирование.",
-                "ppDesc": "Комплексная фазовая плоскость для планарных систем. Незаменим для качественного изучения в биоматематике и динамических системах.",
+                "sec1Title": "Основные Инструменты (Java 21 LTS)", "btnCode": "Исходный код (.zip)", "btnDown": "Скачать", "btnMobile": "Доступно для Desktop",
+                "dfDesc": "Визуализация полей направлений и анализ ОДУ 1-го порядка. Векторный рендеринг высокого разрешения.",
+                "ppDesc": "Комплексная фазовая плоскость для планарных систем. Незаменим для качественного изучения в биоматематике.",
                 "sec2Title": "Аналитические Возможности",
-                "f1Title": "Движок \"My Models\"", "f1Desc": "Выйдите за рамки жестких шаблонов. Наш <em>Custom ODE Engine</em> позволяет вводить произвольные нелинейные системы. Алгоритм автоматически определяет сложные равновесия.",
-                "f2Title": "Контурирование Marching Squares", "f2Desc": "Метод изоклин реализован с использованием передовых алгоритмов векторного контурирования. Интерактивно отображайте аналитическую топологию ОДУ.",
-                "f3Title": "Интеграция Время-Фаза", "f3Desc": "Выйдите за пределы 2D-плоскости. Откройте вспомогательные панели, чтобы наблюдать точную временную эволюцию популяций одновременно с фазовой орбитой.",
-                "f4Title": "Глобальное Дидактическое Расширение", "f4Desc": "Экосистема полностью интернационализирована на 9 языков. Включает подробные учебные руководства, описывающие математическую формулировку.",
-                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Скоро)</span>", "teaserDesc": "Дискретные динамические 2D-системы, разностные уравнения и 1D-бифуркации. Что-то невероятно гибкое для веб-среды уже на подходе..."
+                "f1Title": "Движок \"My Models\"", "f1Desc": "Выйдите за рамки жестких шаблонов. Наш <em>Custom ODE Engine</em> позволяет вводить произвольные нелинейные системы.",
+                "f2Title": "Контурирование Marching Squares", "f2Desc": "Метод изоклин реализован с использованием передовых алгоритмов векторного контурирования.",
+                "f3Title": "Интеграция Время-Фаза", "f3Desc": "Откройте вспомогательные панели, чтобы наблюдать точную временную эволюцию популяций одновременно с фазовой орбитой.",
+                "f4Title": "Глобальное Дидактическое Расширение", "f4Desc": "Экосистема полностью интернационализирована на 9 языков.",
+                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Скоро)</span>", "teaserDesc": "Дискретные динамические 2D-системы, разностные уравнения и 1D-бифуркации."
             },
             "bg": {
                 "h1": "Пакет за Анализ на ОДУ", "slogan": "Числено, качествено и визуално анализиране на ОДУ и фазови равнини.",
-                "sec1Title": "Основни Инструменти (Java 21 LTS)", "btnCode": "Изходен код (GitHub)", "btnDown": "Изтегли", "btnMobile": "Налично за Desktop",
-                "dfDesc": "Визуализация на полета от направления и анализ на ОДУ от 1-ви ред. Векторно изобразяване с висока разделителна способност и адаптивно интегриране.",
-                "ppDesc": "Изчерпателна фазова равнина за планарни системи. От съществено значение за качествено изследване в биоматематиката и динамичните системи.",
+                "sec1Title": "Основни Инструменти (Java 21 LTS)", "btnCode": "Изходен код (.zip)", "btnDown": "Изтегли", "btnMobile": "Налично за Desktop",
+                "dfDesc": "Визуализация на полета от направления и анализ на ОДУ от 1-ви ред.",
+                "ppDesc": "Изчерпателна фазова равнина за планарни системи. От съществено значение за качествено изследване в биоматематиката.",
                 "sec2Title": "Аналитични Възможности",
-                "f1Title": "Двигател \"My Models\"", "f1Desc": "Излезте извън твърдите шаблони. Нашият <em>Custom ODE Engine</em> позволява въвеждане на произволни нелинейни системи. Алгоритъмът автоматично идентифицира сложни равновесия.",
-                "f2Title": "Контуриране чрез Marching Squares", "f2Desc": "Методът на изоклините е внедрен с помощта на усъвършенствани алгоритми за векторно контуриране. Интерактивно картографирайте аналитичната топология на ОДУ.",
-                "f3Title": "Интеграция Време-Фаза", "f3Desc": "Отворете допълнителни панели, за да наблюдавате точната времева еволюция на популациите едновременно с фазовата орбита.",
-                "f4Title": "Глобално Дидактично Разширение", "f4Desc": "Екосистемата е напълно интернационализирана на 9 езика. Включва подробни ръководства, описващи математическата формулировка.",
-                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Очаквайте)</span>", "teaserDesc": "Дискретни динамични 2D системи, диференчни уравнения и 1D бифуркации. Нещо гъвкаво за уеб средата е на път..."
+                "f1Title": "Двигател \"My Models\"", "f1Desc": "Нашият <em>Custom ODE Engine</em> позволява въвеждане на произволни нелинейни системи.",
+                "f2Title": "Контуриране чрез Marching Squares", "f2Desc": "Методът на изоклините е внедрен с помощта на усъвършенствани алгоритми за векторно контуриране.",
+                "f3Title": "Интеграция Време-Фаза", "f3Desc": "Отворете допълнителни панели, за да наблюдавате точната времева еволюция на популациите.",
+                "f4Title": "Глобално Дидактично Разширение", "f4Desc": "Екосистемата е напълно интернационализирана на 9 езика.",
+                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Очаквайте)</span>", "teaserDesc": "Дискретни динамични 2D системи, диференчни уравнения и 1D бифуркации."
             },
             "uk": {
                 "h1": "Пакет Аналізу ЗДУ", "slogan": "Чисельний, якісний та візуальний аналіз ЗДУ та фазових площин.",
-                "sec1Title": "Основні Інструменти (Java 21 LTS)", "btnCode": "Вихідний код (GitHub)", "btnDown": "Завантажити", "btnMobile": "Доступно для Desktop",
-                "dfDesc": "Візуалізація полів напрямків та аналіз ЗДУ 1-го порядку. Векторний рендеринг високої роздільної здатності та адаптивне інтегрування.",
-                "ppDesc": "Комплексна фазова площина для планарних систем. Необхідно для якісного вивчення в біоматематиці та динамічних системах.",
+                "sec1Title": "Основні Інструменти (Java 21 LTS)", "btnCode": "Вихідний код (.zip)", "btnDown": "Завантажити", "btnMobile": "Доступно для Desktop",
+                "dfDesc": "Візуалізація полів напрямків та аналіз ЗДУ 1-го порядку.",
+                "ppDesc": "Комплексна фазова площина для планарних систем. Необхідно для якісного вивчення в біоматематиці.",
                 "sec2Title": "Аналітичні Можливості",
-                "f1Title": "Рушій \"My Models\"", "f1Desc": "Вийдіть за рамки жорстких шаблонів. Наш <em>Custom ODE Engine</em> дозволяє вводити довільні нелінійні системи. Алгоритм автоматично визначає складні рівноваги.",
-                "f2Title": "Контурування Marching Squares", "f2Desc": "Метод ізоклін реалізовано за допомогою передових алгоритмів векторного контурування. Інтерактивно відображайте аналітичну топологію ЗДУ.",
-                "f3Title": "Інтеграція Час-Фаза", "f3Desc": "Відкрийте допоміжні панелі, щоб спостерігати точну часову еволюцію популяцій одночасно з фазовою орбітою.",
-                "f4Title": "Глобальне Дидактичне Розширення", "f4Desc": "Екосистема повністю інтернаціоналізована на 9 мов. Включає детальні навчальні посібники, що описують математичне формулювання.",
-                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Незабаром)</span>", "teaserDesc": "Дискретні динамічні 2D-системи, різницеві рівняння та 1D-біфуркації. Щось неймовірно гнучке для веб-середовища вже на підході..."
+                "f1Title": "Рушій \"My Models\"", "f1Desc": "Наш <em>Custom ODE Engine</em> дозволяє вводити довільні нелінійні системи.",
+                "f2Title": "Контурування Marching Squares", "f2Desc": "Метод ізоклін реалізовано за допомогою передових алгоритмів векторного контурування.",
+                "f3Title": "Інтеграція Час-Фаза", "f3Desc": "Відкрийте допоміжні панелі, щоб спостерігати точну часову еволюцію популяцій.",
+                "f4Title": "Глобальне Дидактичне Розширення", "f4Desc": "Екосистема повністю інтернаціоналізована на 9 мов.",
+                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Незабаром)</span>", "teaserDesc": "Дискретні динамічні 2D-системи, різницеві рівняння та 1D-біфуркації."
             }
         };
 
