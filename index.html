@@ -33,7 +33,6 @@
             border-bottom: 1px solid #333; position: relative;
         }
 
-        /* Seletor blindado */
         .lang-selector {
             position: absolute; top: 20px; right: 20px; z-index: 1000;
             padding: 8px 12px; background: var(--card-bg);
@@ -47,7 +46,6 @@
             background: var(--bg-alt);
         }
 
-        /* Centraliza o seletor elegantemente em telas menores */
         @media (max-width: 768px) {
             .lang-selector {
                 position: relative;
@@ -116,7 +114,6 @@
 <body>
 
     <header>
-        <!-- As bandeiras coloridas voltaram ao HTML! -->
         <select class="lang-selector" id="langSelect" onchange="changeLanguage(this.value)">
             <option value="pt-br">🇧🇷 PT-BR</option>
             <option value="en">🇺🇸 EN</option>
@@ -214,6 +211,8 @@
 
     <footer>
         <p>Desenvolvido pelo Prof. Luiz Antonio Ribeiro de Santana | DMAT - Universidade Federal do Paraná (UFPR)</p>
+        <!-- Inserimos a tag de tradução aqui: data-i18n="footerPolking" -->
+        <p><em data-i18n="footerPolking">Baseado no trabalho original (dfield e pplane) do Prof. John C. Polking (Rice University).</em></p>
         <p>Projeto 100% Open Source licenciado sob a <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GNU GPL v3.0</a>.</p>
     </footer>
 
@@ -234,7 +233,6 @@
                 os = "Linux";
             }
             
-            // TRUQUE DE MESTRE: Substitui as bandeiras pelo globo APENAS se o visitante usar Windows
             if (os === "Windows") {
                 const flagsToGlobe = {'🇧🇷':'🌐', '🇺🇸':'🌐', '🇪🇸':'🌐', '🇫🇷':'🌐', '🇮🇹':'🌐', '🇩🇪':'🌐', '🇷🇺':'🌐', '🇧🇬':'🌐', '🇺🇦':'🌐'};
                 document.querySelectorAll('#langSelect option').forEach(opt => {
@@ -270,7 +268,8 @@
                 "f2Title": "Contorno por Marching Squares", "f2Desc": "O método das Isóclinas foi implementado utilizando algoritmos avançados de contorno vetorial. Mapeie a topologia analítica da EDO de forma interativa.",
                 "f3Title": "Integração Tempo-Fase", "f3Desc": "Vá além do plano 2D. Abra painéis auxiliares para observar a evolução temporal exata das populações simultaneamente à órbita de fase.",
                 "f4Title": "Expansão Didática Global", "f4Desc": "O ecossistema é totalmente internacionalizado em 9 idiomas. Conta com guias tutoriais detalhados que descrevem a formulação matemática.",
-                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Em Breve)</span>", "teaserDesc": "Sistemas dinâmicos discretos em 2D, equações a diferenças e bifurcações 1D. Algo versátil e nativo para a web está a caminho..."
+                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Em Breve)</span>", "teaserDesc": "Sistemas dinâmicos discretos em 2D, equações a diferenças e bifurcações 1D. Algo versátil e nativo para a web está a caminho...",
+                "footerPolking": "Baseado no trabalho original (dfield e pplane) do Prof. John C. Polking (Rice University)."
             },
             "en": {
                 "h1": "ODE Analysis Suite", "slogan": "Numerical, qualitative, and visual analysis of ODEs and Phase Planes.",
@@ -282,7 +281,8 @@
                 "f2Title": "Marching Squares Contouring", "f2Desc": "The Isoclines method is implemented using advanced vector contouring algorithms. Interactively map the ODE's analytical topology.",
                 "f3Title": "Time-Phase Integration", "f3Desc": "Go beyond the 2D plane. Open auxiliary panels to observe the exact temporal evolution of populations simultaneously with the phase orbit.",
                 "f4Title": "Global Educational Expansion", "f4Desc": "Fully internationalized across 9 languages. Includes detailed tutorial guides describing mathematical formulations.",
-                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Coming Soon)</span>", "teaserDesc": "2D discrete dynamical systems, difference equations, and 1D bifurcations. Something web-native is on the way..."
+                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Coming Soon)</span>", "teaserDesc": "2D discrete dynamical systems, difference equations, and 1D bifurcations. Something web-native is on the way...",
+                "footerPolking": "Based on the original work (dfield and pplane) by Prof. John C. Polking (Rice University)."
             },
             "es": {
                 "h1": "Suite de Análisis de EDO", "slogan": "Análisis numérico, cualitativo y visual de EDOs y Planos de Fase.",
@@ -294,7 +294,8 @@
                 "f2Title": "Contorno por Marching Squares", "f2Desc": "El método de Isoclinas se implementa mediante algoritmos avanzados de contorno vectorial. Mapea la topología analítica de forma interactiva.",
                 "f3Title": "Integración Tiempo-Fase", "f3Desc": "Abre paneles auxiliares para observar la evolución temporal exacta de las poblaciones simultáneamente con la órbita de fase.",
                 "f4Title": "Expansión Didáctica Global", "f4Desc": "Totalmente internacionalizado en 9 idiomas. Incluye guías tutoriales detalladas que describen las formulaciones matemáticas.",
-                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Próximamente)</span>", "teaserDesc": "Sistemas dinámicos discretos 2D, ecuaciones en diferencias y bifurcaciones 1D. Algo nativo para la web está en camino..."
+                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Próximamente)</span>", "teaserDesc": "Sistemas dinámicos discretos 2D, ecuaciones en diferencias y bifurcaciones 1D. Algo nativo para la web está en camino...",
+                "footerPolking": "Basado en el trabajo original (dfield y pplane) del Prof. John C. Polking (Rice University)."
             },
             "fr": {
                 "h1": "Suite d'Analyse d'EDO", "slogan": "Analyse numérique, qualitative et visuelle des EDO et des plans de phase.",
@@ -306,7 +307,8 @@
                 "f2Title": "Contour par Marching Squares", "f2Desc": "La méthode des Isoclines est implémentée à l'aide d'algorithmes de contour vectoriel avancés. Cartographiez la topologie analytique de manière interactive.",
                 "f3Title": "Intégration Temps-Phase", "f3Desc": "Ouvrez des panneaux auxiliaires pour observer l'évolution temporelle exacte des populations simultanément à l'orbite de phase.",
                 "f4Title": "Expansion Éducative Mondiale", "f4Desc": "Entièrement internationalisé en 9 langues. Comprend des guides tutoriels détaillés décrivant les formulations mathématiques.",
-                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Bientôt)</span>", "teaserDesc": "Systèmes dynamiques discrets 2D, équations aux différences et bifurcations 1D. Quelque chose de natif pour le web arrive..."
+                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Bientôt)</span>", "teaserDesc": "Systèmes dynamiques discrets 2D, équations aux différences et bifurcations 1D. Quelque chose de natif pour le web arrive...",
+                "footerPolking": "Basé sur le travail original (dfield et pplane) du Prof. John C. Polking (Rice University)."
             },
             "it": {
                 "h1": "Suite di Analisi di EDO", "slogan": "Analisi numerica, qualitativa e visiva di EDO e Piani di Fase.",
@@ -318,7 +320,8 @@
                 "f2Title": "Contorno tramite Marching Squares", "f2Desc": "Il metodo delle Isocline è implementato utilizzando algoritmi avanzati di contorno vettoriale.",
                 "f3Title": "Integrazione Tempo-Fase", "f3Desc": "Vai oltre il piano 2D. Apri pannelli ausiliari per osservare l'esatta evoluzione temporale delle popolazioni.",
                 "f4Title": "Espansione Didattica Globale", "f4Desc": "L'ecosistema è completamente internazionalizzato in 9 lingue.",
-                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(In Arrivo)</span>", "teaserDesc": "Sistemi dinamici discreti in 2D, equazioni alle differenze e biforcazioni 1D."
+                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(In Arrivo)</span>", "teaserDesc": "Sistemi dinamici discreti in 2D, equazioni alle differenze e biforcazioni 1D.",
+                "footerPolking": "Basato sul lavoro originale (dfield e pplane) del Prof. John C. Polking (Rice University)."
             },
             "de": {
                 "h1": "DGL-Analyse-Suite", "slogan": "Numerische, qualitative und visuelle Analyse von DGLs und Phasenporträts.",
@@ -330,7 +333,8 @@
                 "f2Title": "Marching Squares Konturierung", "f2Desc": "Die Isoklinen-Methode wird mit fortschrittlichen Vektorkontur-Algorithmen implementiert.",
                 "f3Title": "Zeit-Phasen-Integration", "f3Desc": "Gehen Sie über die 2D-Ebene hinaus. Öffnen Sie Hilfspanels, um die genaue zeitliche Entwicklung von Populationen zu beobachten.",
                 "f4Title": "Globale didaktische Erweiterung", "f4Desc": "Das Ökosystem ist in 9 Sprachen vollständig internationalisiert.",
-                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Demnächst)</span>", "teaserDesc": "Zeitdiskrete dynamische 2D-Systeme, Differenzengleichungen und 1D-Bifurkationen."
+                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Demnächst)</span>", "teaserDesc": "Zeitdiskrete dynamische 2D-Systeme, Differenzengleichungen und 1D-Bifurkationen.",
+                "footerPolking": "Basierend auf der ursprünglichen Arbeit (dfield und pplane) von Prof. John C. Polking (Rice University)."
             },
             "ru": {
                 "h1": "Пакет Анализа ОДУ", "slogan": "Численный, качественный и визуальный анализ ОДУ и фазовых плоскостей.",
@@ -342,7 +346,8 @@
                 "f2Title": "Контурирование Marching Squares", "f2Desc": "Метод изоклин реализован с использованием передовых алгоритмов векторного контурирования.",
                 "f3Title": "Интеграция Время-Фаза", "f3Desc": "Откройте вспомогательные панели, чтобы наблюдать точную временную эволюцию популяций одновременно с фазовой орбитой.",
                 "f4Title": "Глобальное Дидактическое Расширение", "f4Desc": "Экосистема полностью интернационализирована на 9 языков.",
-                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Скоро)</span>", "teaserDesc": "Дискретные динамические 2D-системы, разностные уравнения и 1D-бифуркации."
+                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Скоро)</span>", "teaserDesc": "Дискретные динамические 2D-системы, разностные уравнения и 1D-бифуркации.",
+                "footerPolking": "Основано на оригинальной работе (dfield и pplane) проф. Джона Ч. Полкинга (Rice University)."
             },
             "bg": {
                 "h1": "Пакет за Анализ на ОДУ", "slogan": "Числено, качествено и визуално анализиране на ОДУ и фазови равнини.",
@@ -354,7 +359,8 @@
                 "f2Title": "Контуриране чрез Marching Squares", "f2Desc": "Методът на изоклините е внедрен с помощта на усъвършенствани алгоритми за векторно контуриране.",
                 "f3Title": "Интеграция Време-Фаза", "f3Desc": "Отворете допълнителни панели, за да наблюдавате точната времева еволюция на популациите.",
                 "f4Title": "Глобално Дидактично Разширение", "f4Desc": "Екосистемата е напълно интернационализирана на 9 езика.",
-                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Очаквайте)</span>", "teaserDesc": "Дискретни динамични 2D системи, диференчни уравнения и 1D бифуркации."
+                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Очаквайте)</span>", "teaserDesc": "Дискретни динамични 2D системи, диференчни уравнения и 1D бифуркации.",
+                "footerPolking": "Основано на оригиналната работа (dfield и pplane) на проф. Джон Ч. Полкинг (Rice University)."
             },
             "uk": {
                 "h1": "Пакет Аналізу ЗДУ", "slogan": "Чисельний, якісний та візуальний аналіз ЗДУ та фазових площин.",
@@ -366,7 +372,8 @@
                 "f2Title": "Контурування Marching Squares", "f2Desc": "Метод ізоклін реалізовано за допомогою передових алгоритмів векторного контурування.",
                 "f3Title": "Інтеграція Час-Фаза", "f3Desc": "Відкрийте допоміжні панелі, щоб спостерігати точну часову еволюцію популяцій.",
                 "f4Title": "Глобальне Дидактичне Розширення", "f4Desc": "Екосистема повністю інтернаціоналізована на 9 мов.",
-                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Незабаром)</span>", "teaserDesc": "Дискретні динамічні 2D-системи, різницеві рівняння та 1D-біфуркації."
+                "teaserTitle": "dplane <span style='color:var(--text-muted); font-size:1.2rem;'>(Незабаром)</span>", "teaserDesc": "Дискретні динамічні 2D-системи, різницеві рівняння та 1D-біфуркації.",
+                "footerPolking": "Засновано на оригінальній роботі (dfield та pplane) проф. Джона Ч. Полкінга (Rice University)."
             }
         };
 
